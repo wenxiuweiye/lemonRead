@@ -1,5 +1,6 @@
-import React,{useState} from 'react';
-import { DownloadOutlined,HomeOutlined,MenuOutlined } from '@ant-design/icons';
+import React,{useEffect, useState} from 'react';
+import { Link } from "react-router-dom";
+import { DownloadOutlined,HomeOutlined,MenuOutlined,LoginOutlined } from '@ant-design/icons';
 import type {MenuProps,} from 'antd';
 import githublogo from '../../assets/images/logo/github-fill-white.png';
 import {Menu} from 'antd';
@@ -9,7 +10,7 @@ interface Props{
 }
 const items:MenuProps['items'] = [
     {
-        label:<a href='/'>柠檬读书</a>,
+        label:<Link to={"/"}>柠檬读书</Link>,
         key:'lemonRead',
         icon:<HomeOutlined />
     },
@@ -19,15 +20,15 @@ const items:MenuProps['items'] = [
         icon:<MenuOutlined />,
         children:[
             {
-                label:'opt1',
+                label:<Link to={"/introduce"}>opt1</Link>,
                 key:'opt1'
             },
             {
-                label:'opt2',
+                label:<Link to={"/introduce"}>opt1</Link>,
                 key:'opt2'
             },
             {
-                label:'opt3',
+                label:<Link to={"/introduce"}>opt1</Link>,
                 key:'opt3'
             }
         ]
@@ -36,6 +37,11 @@ const items:MenuProps['items'] = [
         label:'下载',
         key:'downLoad',
         icon:<DownloadOutlined />
+    },
+    {
+        label:'登录',
+        key:'login',
+        icon:<LoginOutlined />
     },
     {
         label:<a href='https://www.baidu.com'>GitHub</a>,
@@ -48,7 +54,7 @@ const Navigator : React.FC<Props> = ({naviMode}) =>{
     const onClick:MenuProps['onClick'] = (e)=>{
         setselectedKeys(e.key)
     }
-    return(<Menu defaultOpenKeys={['2']} style={{minWidth:"35vw"}} theme='dark' defaultSelectedKeys={['4']} selectedKeys={[selectedKeys]} onClick={onClick} mode={naviMode} items={items}></Menu>)
+    return(<Menu defaultOpenKeys={['2']} style={{minWidth:"45vw"}} theme='dark' defaultSelectedKeys={['4']} selectedKeys={[selectedKeys]} onClick={onClick} mode={naviMode} items={items}></Menu>)
 }
 
 export default Navigator
