@@ -10,7 +10,7 @@ export default class Map extends React.Component{
     }
     componentDidMount(){
         console.log()
-        axios.get("http://localhost:3033/assets/map/chinaMap").then((e=>{
+        axios.get("http://www.lemons.asia/assets/map/chinaMap").then((e=>{
             var mychart = echarts.init(this.mapRef.current as HTMLDivElement)
             echarts.registerMap("china",e.data)
             mychart.setOption({

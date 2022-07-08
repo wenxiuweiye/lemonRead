@@ -1,44 +1,44 @@
 import {
-    AppstoreOutlined,
+    TableOutlined,
     MenuFoldOutlined,
     MenuUnfoldOutlined,
+    PieChartOutlined,
+    TeamOutlined
   } from '@ant-design/icons';
   import type { MenuProps } from 'antd';
   import { Button, Menu } from 'antd';
-  import React, { useState } from 'react';
-  
+  import React, { useState} from 'react';
   const items: MenuProps['items'] = [
     {
-      label:"opt1",
-      key:'opt1',
-      icon:<AppstoreOutlined></AppstoreOutlined>
+      label:"书榜",
+      key:'bookList',
+      icon:<PieChartOutlined />
     },
     {
-      label:"opt2",
-      key:'opt2',
-      icon:<AppstoreOutlined></AppstoreOutlined>
+      label:"书架",
+      key:'bookShelf',
+      icon:<TableOutlined />
     },
     {
-      label:"opt3",
-      key:'opt4',
-      icon:<AppstoreOutlined></AppstoreOutlined>
+      label:"书友",
+      key:'bookClub',
+      icon:<TeamOutlined />
     }
   ];
-  
   const SiderNavi: React.FC = () => {
     const [collapsed, setCollapsed] = useState(true);
-    const [naviShow,setnaviShow] = useState({zIndex:"0"})
+
+    const [_time,_setTime] = useState(undefined)
     const toggleCollapsed = () => {
       setCollapsed(!collapsed);
-      if(!collapsed){
-        setnaviShow({zIndex:"0"})
-      }else{
-        setnaviShow({zIndex:"10"})
-      }
     };
-  
+    const onSelect:MenuProps["onSelect"] = (e)=>{
+      console.log(e.key)
+      let ele =  document.getElementsByClassName(e.key)
+      ele[0].scrollIntoView()
+    }
     return (
-      <div style={{position:"absolute", marginLeft:"1vw", display:'flex',flexDirection:'column', alignItems:'start', justifyContent:"center", width: 256 }}>
+      <div style={{position:"fixed",top:"5", marginLeft:"1vw", display:'flex',flexDirection:'column', alignItems:'start', justifyContent:"center", width: 256, zIndex:"10"}}>
         <Button type="primary" onClick={toggleCollapsed} style={{marginLeft:"1vw",marginTop:'2vh', marginBottom: "1em", zIndex:10}}>
           {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
         </Button>
@@ -47,7 +47,7 @@ import {
           mode="inline"
           inlineCollapsed={collapsed}
           items={items}
-          style={naviShow}
+          onSelect={onSelect}
         />
       </div>
     );

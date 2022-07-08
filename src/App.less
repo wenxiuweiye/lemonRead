@@ -1,25 +1,30 @@
-@import '~antd/dist/antd.css';
-
+@import '~antd/dist/antd.less';
 .App {
   text-align: center;
-  .headerHome{
+  .headerApp{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    background-color: rgb(28, 138, 148);
     .logoHome{
-        display: flex;
-        align-items: center;
-        color: gainsboro;
-        text{
-            width: 6vw;
+      display: flex;
+        a{
+          display: flex;
+          align-items: center;
+          color: black;
+          font-weight: 500;
+          font-size: 1.7em;
+          font-family: "华文新魏";
+          img{
+            margin-right: .5em;
+          }
         }
     }
   }
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  .footerApp{
+    background-color: rgb(234, 234, 234);
+    color: gray;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -28,26 +33,3 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

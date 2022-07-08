@@ -1,0 +1,209 @@
+.Home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .titleHome {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-size: 100% 100%;
+
+        .wordsHome {
+            font-size: 4em;
+            
+            font-family: "华文新魏";
+            color: hsl(196, 37%, 90%);
+            transform: translateY(10vh);
+        }
+
+        .wordsHome:hover {
+            transition: all 0.5s;
+            transform: translateY(10vh) scale(1.1);
+
+        }
+
+        .bookTip {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            width: 70em;
+            height: 50em;
+            transform: translateY(20vh);
+            background-size: cover;
+            font-family: '华文行楷';
+            background-repeat: no-repeat;
+            
+            .leftTip {
+                list-style: none;
+                padding-top: 3%;
+                width: 45%;
+                height: 100%;
+                font-size: 1.2em;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                justify-content: center;
+
+                li {
+                    width: 100%;
+                    height: 6.5%;
+                }
+
+                li:hover {
+                    transition: all .5s;
+                    transform: scale(1.1);
+                    color: rgb(90, 126, 16)
+                }
+            }
+
+            .rightTip {
+               
+                width: 45%;
+                height: 100%;
+                padding-top: 3%;
+                font-size: 1.2em;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                justify-content: center;
+
+                ul {
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    justify-content: center;
+                    list-style: none;
+
+                    li {
+                        
+                        width: 100%;
+                        height: 18%;
+                    }
+
+                    li:hover {
+                        transition: all .5s;
+                        transform: scale(1.1);
+                        color: rgb(90, 126, 16)
+                    }
+                }
+
+                .logoTip {
+                    width: 100%;
+                    display: flex;
+                    font-size: 3em;
+                    justify-content: end;
+                    margin-top: 5.5em;
+                   
+                }
+            }
+
+        }
+    }
+
+
+    .bookShelf {
+        margin-top: 5em;
+        width: 33vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        ul {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            list-style: none;
+
+            li {
+                margin: 1em;
+                transition: all 1s linear;
+
+                :hover {
+                    border-radius: 5em;
+                }
+            }
+
+        }
+    }
+
+    .carouselBox {
+        .carousel {
+            width: 50vw;
+            margin-top: 10em;
+            overflow: hidden;
+            background-color: rebeccapurple;
+            // :hover{
+            //     transition: all .5s;
+            //     background: linear-gradient(145deg, #cacaca, #f0f0f0);
+            //     box-shadow:  20px 20px 60px #bebebe,
+            //              -20px -20px 60px #ffffff;
+            //     transform: scale(1.1);
+            // }
+        }
+    }
+
+    .CardBox {
+        margin-top: 15em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80em;
+    }
+
+}
+
+
+@keyframes enter {
+    from {
+        transform: translateX(-100vw);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+// .bookList{
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-around;
+//     width: 60vw;
+//     div{
+//         display: flex;
+//         flex-direction: column;
+//         .titleCards{
+//             text-align: center;
+//             font-family: "华文新魏";
+//             transform: translateX(-2em);
+//             font-size: 1.7em;
+//         }
+//         .CardsList{
+//             margin-top: .5em;
+//             display: flex;
+//             list-style: none;
+//             flex-wrap: wrap;
+//             li{
+//                 margin: 1%;
+//             }
+//         }
+//     }
+//     .pieRef{
+//         width:50vw;
+//         height:40vh;
+//         display:flex;
+//         align-items:center;
+//         justify-content:"center";
+//     } 
+// }
+
+
+
+  

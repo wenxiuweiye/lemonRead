@@ -2,7 +2,7 @@ import React,{useEffect, useState} from 'react';
 import { Link } from "react-router-dom";
 import { DownloadOutlined,HomeOutlined,MenuOutlined,LoginOutlined } from '@ant-design/icons';
 import type {MenuProps,} from 'antd';
-import githublogo from '../../assets/images/logo/github-fill-white.png';
+import githublogo from '../../assets/images/logo/github.png';
 import {Menu} from 'antd';
 //
 interface Props{
@@ -15,20 +15,16 @@ const items:MenuProps['items'] = [
         icon:<HomeOutlined />
     },
     {
-        label:"介绍",
+        label:"分类",
         key:'introduce',
         icon:<MenuOutlined />,
         children:[
             {
-                label:<Link to={"/introduce"}>opt1</Link>,
-                key:'opt1'
-            },
-            {
-                label:<Link to={"/introduce"}>opt1</Link>,
+                label:<Link to={"/friend"}>书友</Link>,
                 key:'opt2'
             },
             {
-                label:<Link to={"/introduce"}>opt1</Link>,
+                label:<Link to={"/bookShelf"}>书单</Link>,
                 key:'opt3'
             }
         ]
@@ -39,12 +35,12 @@ const items:MenuProps['items'] = [
         icon:<DownloadOutlined />
     },
     {
-        label:'登录',
+        label:<a href='http://www.lemons.asia/login/'>登录</a>,
         key:'login',
         icon:<LoginOutlined />
     },
     {
-        label:<a href='https://www.baidu.com'>GitHub</a>,
+        label:<a href='https://github.com/wenxiuweiye/lemonRead'>GitHub</a>,
         key:'gotoGit',
         icon:<img src={githublogo}></img>
     },
@@ -54,7 +50,7 @@ const Navigator : React.FC<Props> = ({naviMode}) =>{
     const onClick:MenuProps['onClick'] = (e)=>{
         setselectedKeys(e.key)
     }
-    return(<Menu defaultOpenKeys={['2']} style={{minWidth:"45vw"}} theme='dark' defaultSelectedKeys={['4']} selectedKeys={[selectedKeys]} onClick={onClick} mode={naviMode} items={items}></Menu>)
+    return(<Menu defaultOpenKeys={['2']} style={{borderRadius:"3em",display:"flex",alignItems:"center", justifyContent:"center", minWidth:"40vw", backgroundColor: "gainsboro"}}  defaultSelectedKeys={['4']} selectedKeys={[selectedKeys]} onClick={onClick} mode={naviMode} items={items}></Menu>)
 }
 
 export default Navigator
