@@ -1,9 +1,11 @@
 import { Card } from "antd";
 import React, {  useEffect, useRef, } from "react";
+
 import * as echarts from "echarts";
 
 interface Props {
   cards: cardsProps[];
+  imgTitle:string
 }
 interface cardsProps {
   pros: number;
@@ -15,7 +17,7 @@ interface cardsProps {
   label: string;
 }
 const { Meta } = Card;
-const Cards: React.FC<Props> = ({ cards }) => {
+const Cards: React.FC<Props> = ({ cards,imgTitle }) => {
   let pieChart:any;
   const pieRef = useRef(null);
   const initCharts = ()=>{
@@ -131,7 +133,7 @@ const Cards: React.FC<Props> = ({ cards }) => {
     <div className="bookList">
       <div>
         <div className="titleCards">
-          <div>好书推荐</div>
+          <img src={imgTitle}></img>
         </div>
         <ul className="CardsList">{thecard}</ul>
       </div>
